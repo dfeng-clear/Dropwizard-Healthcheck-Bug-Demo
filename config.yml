@@ -3,3 +3,11 @@ logging:
   level: INFO
   loggers:
     feng.david: DEBUG
+
+# configure two health checks: one critical (ready), one non-critical (alive)
+health:
+  healthChecks:
+    - name: AliveHealthCheck
+      type: alive
+    - name: ReadyHealthCheck
+      type: ready

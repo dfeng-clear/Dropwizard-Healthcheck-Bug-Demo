@@ -1,5 +1,7 @@
 package feng.david;
 
+import feng.david.health.AliveHealthCheck;
+import feng.david.health.ReadyHealthCheck;
 import io.dropwizard.core.Application;
 import io.dropwizard.core.setup.Bootstrap;
 import io.dropwizard.core.setup.Environment;
@@ -23,7 +25,8 @@ public class HealthCheckBugDemoServiceApplication extends Application<HealthChec
     @Override
     public void run(final HealthCheckBugDemoServiceConfiguration configuration,
                     final Environment environment) {
-        // TODO: implement application
+        environment.healthChecks().register("AliveHealthCheck", new AliveHealthCheck());
+        environment.healthChecks().register("ReadyHealthCheck", new ReadyHealthCheck());
     }
 
 }
