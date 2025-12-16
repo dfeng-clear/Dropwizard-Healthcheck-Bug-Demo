@@ -1,5 +1,5 @@
 # HealthCheckBugDemoService
-- Demo application to showcase a bug in the healthcheck implementation
+- Demo application to showcase a bug in the healthcheck implementation described [here](https://github.com/dropwizard/dropwizard/issues/10907)
 - We instantiated the project using [Dropwizard Archetype](https://github.com/dropwizard/dropwizard-archetypes). The only modification involved was creating two health checks:
 one critical (type = ready) and one non-critical (type = alive)
 - When curling the health check endpoint, notice that the `type` query parameter is ineffective:
